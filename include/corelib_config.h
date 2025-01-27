@@ -29,6 +29,8 @@
  * 0 - Chrome
  * Todo: Add support for
  * 1 - Spall
+ * Todo: Add support for
+ * 2 - Speedscope
  */
 #define CORELIB_INSTRUMENTOR_VISUALIZER 0
 
