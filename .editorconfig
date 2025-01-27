@@ -18,3 +18,8 @@ trim_trailing_whitespace = false
 indent_style = tab
 indent_size = 8
 tab_width = 8
+
+[*.{cpp,hpp}]
+indent_style = space
+indent_size = 2
+tab_width = 2

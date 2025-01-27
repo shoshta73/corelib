@@ -24,4 +24,12 @@
  */
 #define CORELIB_LOG_LEVEL_STRING_TYPE 4
 
+/**
+ * Visualizer to which for instrumentor should format the output.
+ * 0 - Chrome
+ * Todo: Add support for
+ * 1 - Spall
+ */
+#define CORELIB_INSTRUMENTOR_VISUALIZER 0
+
 #endif // __CORELIB_CONFIG_H__
