@@ -12,14 +12,14 @@ namespace corelib {
 
   struct ProfileResult
   {
-    std::string name;
+    ::std::string name;
     long long start, end;
     uint32_t thread_id;
   };
 
   struct InstrumentationSession
   {
-    std::string name;
+    ::std::string name;
   };
 
   class Instrumentor
@@ -27,7 +27,7 @@ namespace corelib {
   public:
     Instrumentor();
 
-    void begin_session(const std::string &name, const std::string &filepath = "results.json");
+    void begin_session(const ::std::string &name, const ::std::string &filepath = "results.json");
     void end_session();
     void write_profile(const ProfileResult &result);
 
@@ -42,21 +42,21 @@ namespace corelib {
     void write_header();
 
     InstrumentationSession *current_session_;
-    std::ofstream output_stream_;
+    ::std::ofstream output_stream_;
     int profile_count_;
   };
 
   class InstrumentationTimer
   {
   public:
-    InstrumentationTimer(const char *name = std::source_location::current().function_name());
+    InstrumentationTimer(const char *name = ::std::source_location::current().function_name());
 
     ~InstrumentationTimer();
     void stop();
 
   private:
     const char *name_;
-    std::chrono::time_point<std::chrono::high_resolution_clock> start_timepoint_;
+    ::std::chrono::time_point<::std::chrono::high_resolution_clock> start_timepoint_;
     bool stopped_;
   };
 

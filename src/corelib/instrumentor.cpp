@@ -1,14 +1,14 @@
 #include <corelib/instrumentor.hpp>
 
 namespace corelib {
-  
+
   Instrumentor::Instrumentor()
       : current_session_(nullptr)
       , profile_count_(0)
   {
   }
 
-  void Instrumentor::begin_session(const std::string &name, const std::string &filepath)
+  void Instrumentor::begin_session(const ::std::string &name, const ::std::string &filepath)
   {
     output_stream_.open(filepath);
     write_header();
@@ -29,8 +29,8 @@ namespace corelib {
     if (profile_count_++ > 0)
       output_stream_ << ",";
 
-    std::string name = result.name;
-    std::replace(name.begin(), name.end(), '"', '\'');
+    ::std::string name = result.name;
+    ::std::replace(name.begin(), name.end(), '"', '\'');
 
     output_stream_ << "{";
     output_stream_ << "\"cat\":\"function\",";
@@ -61,7 +61,7 @@ namespace corelib {
       : name_(name)
       , stopped_(false)
   {
-    start_timepoint_ = std::chrono::high_resolution_clock::now();
+    start_timepoint_ = ::std::chrono::high_resolution_clock::now();
   }
 
   InstrumentationTimer::~InstrumentationTimer()
@@ -72,12 +72,12 @@ namespace corelib {
 
   void InstrumentationTimer::stop()
   {
-    auto endTimepoint = std::chrono::high_resolution_clock::now();
+    auto endTimepoint = ::std::chrono::high_resolution_clock::now();
 
-    long long start = std::chrono::time_point_cast<std::chrono::microseconds>(start_timepoint_).time_since_epoch().count();
-    long long end = std::chrono::time_point_cast<std::chrono::microseconds>(endTimepoint).time_since_epoch().count();
+    long long start = ::std::chrono::time_point_cast<::std::chrono::microseconds>(start_timepoint_).time_since_epoch().count();
+    long long end = ::std::chrono::time_point_cast<::std::chrono::microseconds>(endTimepoint).time_since_epoch().count();
 
-    uint32_t threadID = std::hash<std::thread::id>{}(std::this_thread::get_id());
+    uint32_t threadID = ::std::hash<::std::thread::id>{}(::std::this_thread::get_id());
     Instrumentor::get().write_profile({name_, start, end, threadID});
 
     stopped_ = true;

@@ -56,7 +56,7 @@ namespace corelib {
         }
 
         auto location = ::std::format("{}:{} - {}:", loc.file_name(), loc.line(), loc.function_name());
-        auto msg_str = ::std::format(msg, std::forward<Args>(args)...);
+        auto msg_str = ::std::format(msg, ::std::forward<Args>(args)...);
         ::std::println("{}{} {}", lvl_str, location, msg_str);
       }
     };
