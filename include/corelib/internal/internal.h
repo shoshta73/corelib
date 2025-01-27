@@ -3,4 +3,6 @@
 
 #include <corelib/internal/__build_type__.h>
 
+#include <corelib_config.h>
+
 #endif // __CORELIB_INTERNAL_INTERNAL_H__

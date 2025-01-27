@@ -7,6 +7,7 @@
 #include <corelib/typedef.hpp>
 #include <corelib/def.hpp>
 #include <corelib/auto_release.hpp>
+#include <corelib/bind.hpp>
 
 #include <corelib/assert.hpp>
 #include <corelib/log.hpp>

@@ -17,3 +17,6 @@ set_build_type_defines(callstack)
 
 add_example(auto_release)
 set_build_type_defines(auto_release)
+
+add_example(binder)
+set_build_type_defines(binder)
