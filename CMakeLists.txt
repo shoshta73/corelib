@@ -4,10 +4,10 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(set_build_type_defines)
 
 project(
-	corelib
-	DESCRIPTION "My collection of stuff that i commonly use."
-	VERSION 0.0.0.0
-	LANGUAGES CXX
+    corelib
+    DESCRIPTION "My collection of stuff that i commonly use."
+    VERSION 0.0.0.0
+    LANGUAGES CXX
 )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
@@ -22,8 +22,8 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wunused -Wfatal-errors -Werror -pedantic")
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wunused -Wfatal-errors -Werror -pedantic")
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wunused -Wfatal-errors -Werror -Wpedantic -pedantic")
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wunused -Wfatal-errors -Werror -Wpedantic -pedantic")
 endif()
 
 set(CORELIB_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -32,8 +32,19 @@ set(CORELIB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 file(GLOB_RECURSE CORELIB_SOURCES "${CORELIB_SOURCE_DIR}/*.cpp")
 file(GLOB_RECURSE CORELIB_HEADERS "${CORELIB_INCLUDE_DIR}/*.hpp")
 
-add_library(${PROJECT_NAME} SHARED ${CORELIB_SOURCES} ${CORELIB_HEADERS})
+add_library(${PROJECT_NAME} STATIC ${CORELIB_SOURCES} ${CORELIB_HEADERS})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CORELIB_INCLUDE_DIR})
 set_build_type_defines(${PROJECT_NAME})
+set_target_properties(${PROJECT_NAME} PROPERTIES
+	PREFIX ""
+)
+
+add_library(${PROJECT_NAME}_shared SHARED ${CORELIB_SOURCES} ${CORELIB_HEADERS})
+target_include_directories(${PROJECT_NAME}_shared PUBLIC ${CORELIB_INCLUDE_DIR})
+set_build_type_defines(${PROJECT_NAME}_shared)
+set_target_properties(${PROJECT_NAME}_shared PROPERTIES
+	OUTPUT_NAME ${PROJECT_NAME}
+	PREFIX ""
+)
 
 add_subdirectory(examples)

@@ -57,6 +57,10 @@ namespace corelib {
   using s64 = int64;
   using i64 = int64;
 
+  using size = size_t;
+  using usize = usize_t;
+  using ssize = ssize_t;
+
 } // namespace corelib
 
 #endif // __CORELIB_TYPEDEF_HPP__

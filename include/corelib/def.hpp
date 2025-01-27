@@ -23,6 +23,10 @@ namespace corelib {
   constexpr usize_t usize_t_min = ::std::numeric_limits<usize_t>::min();
   constexpr ssize_t ssize_t_min = ::std::numeric_limits<ssize_t>::min();
 
+  constexpr size size_min = ::std::numeric_limits<size>::min();
+  constexpr usize usize_min = ::std::numeric_limits<usize>::min();
+  constexpr ssize ssize_min = ::std::numeric_limits<ssize>::min();
+
   constexpr u8_t u8_t_min = ::std::numeric_limits<u8_t>::min();
   constexpr u16_t u16_t_min = ::std::numeric_limits<u16_t>::min();
   constexpr u32_t u32_t_min = ::std::numeric_limits<u32_t>::min();
@@ -112,6 +116,10 @@ namespace corelib {
   constexpr i32 i32_max = ::std::numeric_limits<i32>::max();
   constexpr s64 s64_max = ::std::numeric_limits<s64>::max();
   constexpr i64 i64_max = ::std::numeric_limits<i64>::min();
+
+  constexpr size size_max = ::std::numeric_limits<size>::max();
+  constexpr usize usize_max = ::std::numeric_limits<usize>::max();
+  constexpr ssize ssize_max = ::std::numeric_limits<ssize>::max();
 
 } // namespace corelib
 

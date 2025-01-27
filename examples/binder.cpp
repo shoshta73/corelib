@@ -14,5 +14,5 @@ int foo(CallBack cb)
 
 int main()
 {
-  return foo(corelib::Binder<int, int, int>(add)());
+  return foo(corelib::Bind<int, int, int>(add)());
 }
