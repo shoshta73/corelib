@@ -4,6 +4,7 @@
 #include <format>
 #include <source_location>
 #include <string>
+#include <print>
 
 #include <corelib_config.h>
 
