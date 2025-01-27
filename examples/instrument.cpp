@@ -7,15 +7,14 @@ void bar(int counter)
   {
     corelib::InstrumentationTimer timer_loop_count{std::to_string(i).c_str()};
     {
-      bar(counter - 1);
+      foo();
     }
   }
 }
 
-void foo(int i)
+void foo()
 {
   corelib::InstrumentationTimer timer;
-  bar(i);
 }
 
 int main(void)
@@ -29,7 +28,7 @@ int main(void)
         for (int i = 0; i < 10; i++)
         {
           corelib::InstrumentationTimer timer_loop_count{std::to_string(i).c_str()};
-          foo(i);
+          foo();
           bar(i);
         }
       }
