@@ -1,6 +1,8 @@
 #ifndef __CORELIB_LOG_HPP__
 #define __CORELIB_LOG_HPP__ 1
 
+#include <corelib/internal/internal.h>
+
 #include <format>
 #include <source_location>
 #include <string>

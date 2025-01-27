@@ -1,6 +1,8 @@
 #ifndef __CORELIB_TYPEDEF_HPP__
 #define __CORELIB_TYPEDEF_HPP__ 1
 
+#include <corelib/internal/internal.h>
+
 namespace corelib {
 
   using uint8_t = unsigned char;

@@ -1,6 +1,8 @@
 #ifndef __CORELIB_ASSERT_HPP__
 #define __CORELIB_ASSERT_HPP__ 1
 
+#include <corelib/internal/internal.h>
+
 #include <cstdlib>
 #include <format>
 #include <source_location>

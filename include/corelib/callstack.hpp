@@ -1,6 +1,8 @@
 #ifndef __CORELIB_CALLSTACK_HPP__
 #define __CORELIB_CALLSTACK_HPP__ 1
 
+#include <corelib/internal/internal.h>
+
 #include <cstdint>
 #include <source_location>
 #include <thread>

@@ -1,6 +1,8 @@
 #ifndef __CORELIB_DEF_HPP__
 #define __CORELIB_DEF_HPP__ 1
 
+#include <corelib/internal/internal.h>
+
 #include <limits>
 
 #include <corelib/typedef.hpp>

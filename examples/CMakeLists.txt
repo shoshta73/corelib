@@ -4,6 +4,13 @@ function(add_example name)
 endfunction()
 
 add_example(assert)
+set_build_type_defines(assert)
+
 add_example(log)
+set_build_type_defines(log)
+
 add_example(instrument)
+set_build_type_defines(instrument)
+
 add_example(callstack)
+set_build_type_defines(callstack)

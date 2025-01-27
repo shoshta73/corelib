@@ -1,11 +1,18 @@
 cmake_minimum_required(VERSION 3.22)
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+include(set_build_type_defines)
+
 project(
 	corelib
 	DESCRIPTION "My collection of stuff that i commonly use."
 	VERSION 0.0.0.0
 	LANGUAGES CXX
 )
+
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -27,5 +34,6 @@ file(GLOB_RECURSE CORELIB_HEADERS "${CORELIB_INCLUDE_DIR}/*.hpp")
 
 add_library(${PROJECT_NAME} SHARED ${CORELIB_SOURCES} ${CORELIB_HEADERS})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CORELIB_INCLUDE_DIR})
+set_build_type_defines(${PROJECT_NAME})
 
 add_subdirectory(examples)
