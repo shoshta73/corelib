@@ -3,7 +3,6 @@ function(add_example name)
 	target_link_libraries(${name} PRIVATE corelib)
 endfunction()
 
-add_example(hello)
 add_example(assert)
 add_example(log)
 add_example(instrument)

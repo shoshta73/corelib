@@ -1,6 +1,6 @@
 # Tasks
 
-- [ ] remove `hello.hpp` and `hello.cpp` -> setup code
+- [x] remove `hello.hpp` and `hello.cpp` -> setup code
 
 - [ ] BaseLogging utility:
 
