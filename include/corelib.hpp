@@ -2,5 +2,6 @@
 #define __CORELIB_HPP__
 
 #include <corelib/hello.hpp> // TODO: remove
+#include <corelib/assert.hpp>
 
 #endif
