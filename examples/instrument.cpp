@@ -1,5 +1,10 @@
 #include <corelib.hpp>
 
+void foo()
+{
+  corelib::InstrumentationTimer timer;
+}
+
 void bar(int counter)
 {
   corelib::InstrumentationTimer timer;
@@ -10,11 +15,6 @@ void bar(int counter)
       foo();
     }
   }
-}
-
-void foo()
-{
-  corelib::InstrumentationTimer timer;
 }
 
 int main(void)

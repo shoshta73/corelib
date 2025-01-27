@@ -8,5 +8,6 @@
 #include <corelib/log.hpp>
 
 #include <corelib/instrumentor.hpp>
+#include <corelib/callstack.hpp>
 
 #endif
