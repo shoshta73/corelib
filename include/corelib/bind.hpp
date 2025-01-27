@@ -5,26 +5,25 @@
 
 #include <functional>
 #include <utility>
+#include <type_traits>
 
 namespace corelib {
 
   template <typename T, typename... Args>
   struct Bind
   {
-    using CallbackType = std::function<T(Args...)>;
-
-    Bind(CallbackType callback)
-        : callback_(std::move(callback))
+    Bind(::std::function<T(Args...)> callback)
+        : callback_(::std::move(callback))
     {
     }
 
-    CallbackType operator()()
+    ::std::function<T(Args...)> operator()()
     {
       return callback_;
     }
 
   private:
-    CallbackType callback_;
+    ::std::function<T(Args...)> callback_;
   };
 
 } // namespace corelib

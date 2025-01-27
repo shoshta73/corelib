@@ -1,5 +1,8 @@
 #include <corelib/instrumentor.hpp>
 
+#include <string>
+#include <chrono>
+
 namespace corelib {
 
   Instrumentor::Instrumentor()
@@ -74,10 +77,10 @@ namespace corelib {
   {
     auto endTimepoint = ::std::chrono::high_resolution_clock::now();
 
-    long long start = ::std::chrono::time_point_cast<::std::chrono::microseconds>(start_timepoint_).time_since_epoch().count();
-    long long end = ::std::chrono::time_point_cast<::std::chrono::microseconds>(endTimepoint).time_since_epoch().count();
+    i64 start = ::std::chrono::time_point_cast<::std::chrono::microseconds>(start_timepoint_).time_since_epoch().count();
+    i64 end = ::std::chrono::time_point_cast<::std::chrono::microseconds>(endTimepoint).time_since_epoch().count();
 
-    uint32_t threadID = ::std::hash<::std::thread::id>{}(::std::this_thread::get_id());
+    u32 threadID = ::std::hash<::std::thread::id>{}(::std::this_thread::get_id());
     Instrumentor::get().write_profile({name_, start, end, threadID});
 
     stopped_ = true;

@@ -1,6 +1,11 @@
 #include <corelib/callstack.hpp>
 
 #include <fstream>
+#include <string>
+#include <thread>
+#include <source_location>
+
+#include <corelib/def.hpp>
 
 namespace corelib {
 
@@ -43,7 +48,7 @@ namespace corelib {
     nodes_.push_back(node);
   }
 
-  void Callstack::pop(size_t idx)
+  void Callstack::pop(size idx)
   {
     last_ = nodes_[idx].caller_idx;
   }

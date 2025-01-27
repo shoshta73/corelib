@@ -3,19 +3,20 @@
 
 #include <corelib/internal/internal.h>
 
-#include <cstdint>
 #include <source_location>
 #include <thread>
 #include <vector>
+
+#include <corelib/def.hpp>
 
 namespace corelib {
 
   struct CallstackEntry
   {
     ::std::source_location loc;
-    ::std::size_t caller_idx = -1;
-    ::std::size_t idx = 0;
-    ::std::uint32_t thread_id;
+    size caller_idx = -1;
+    size idx = 0;
+    u32 thread_id;
   };
 
   class Callstack
@@ -32,11 +33,11 @@ namespace corelib {
     }
 
     void push(CallstackEntry &node);
-    void pop(size_t idx);
+    void pop(size idx);
 
   private:
     ::std::vector<CallstackEntry> nodes_;
-    ::std::size_t last_;
+    size last_;
     ::std::string filename_;
   };
 

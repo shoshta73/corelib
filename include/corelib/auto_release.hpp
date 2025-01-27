@@ -17,7 +17,7 @@ namespace corelib {
     {
     }
 
-    explicit AutoRelease(T obj, std::function<void(T)> deleter = nullptr)
+    explicit AutoRelease(T obj, ::std::function<void(T)> deleter = nullptr)
         : obj_(obj)
         , deleter_(deleter)
     {
@@ -34,7 +34,7 @@ namespace corelib {
 
     AutoRelease &operator=(AutoRelease &&other)
     {
-      AutoRelease new_obj{std::move(other)};
+      AutoRelease new_obj{::std::move(other)};
       swap(new_obj);
 
       return *this;
@@ -68,19 +68,19 @@ namespace corelib {
 
     void swap(AutoRelease &other)
     {
-      std::ranges::swap(obj_, other.obj_);
-      std::ranges::swap(deleter_, other.deleter_);
+      ::std::ranges::swap(obj_, other.obj_);
+      ::std::ranges::swap(deleter_, other.deleter_);
     }
 
   private:
     T obj_;
-    std::function<void(T)> deleter_;
+    ::std::function<void(T)> deleter_;
   };
 
 } // namespace corelib
 
 template <class T, T Invalid>
-void swap(corelib::AutoRelease<T, Invalid> &ar1, corelib::AutoRelease<T, Invalid> &ar2)
+void swap(::corelib::AutoRelease<T, Invalid> &ar1, ::corelib::AutoRelease<T, Invalid> &ar2)
 {
   ar1.swap(ar2);
 }

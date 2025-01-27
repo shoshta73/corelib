@@ -10,13 +10,15 @@
 #include <thread>
 #include <source_location>
 
+#include <corelib/def.hpp>
+
 namespace corelib {
 
   struct ProfileResult
   {
     ::std::string name;
-    long long start, end;
-    uint32_t thread_id;
+    i64 start, end;
+    u32 thread_id;
   };
 
   struct InstrumentationSession
