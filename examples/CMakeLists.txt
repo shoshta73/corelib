@@ -5,3 +5,4 @@ endfunction()
 
 add_example(hello)
 add_example(assert)
+add_example(log)
