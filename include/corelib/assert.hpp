@@ -40,7 +40,7 @@ namespace corelib {
                 if (!cond)
                 {
                     auto location = ::std::format("{}:{} in {}", loc.file_name(), loc.line(), loc.function_name());
-                    println("Assertion failed: {}: {}", location, ::std::format(msg, ::std::forward<Args>(args)...));
+                    ::corelib::println("Assertion failed: {}: {}", location, ::std::format(msg, ::std::forward<Args>(args)...));
 
                     ::std::abort();
                 }

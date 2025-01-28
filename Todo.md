@@ -7,3 +7,9 @@
   - [x] Chrome
   - [ ] Spall
   - [ ] Speedscope
+
+- [ ] Logger:
+
+  - [ ] Color support
+  - [ ] File support
+  - [ ] Custom formatting

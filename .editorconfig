@@ -19,7 +19,12 @@ indent_style = tab
 indent_size = 8
 tab_width = 8
 
-[*.cmake]
+[*.{cmake,make,mk}]
+indent_style = tab
+indent_size = 8
+tab_width = 8
+
+[Makefile]
 indent_style = tab
 indent_size = 8
 tab_width = 8
