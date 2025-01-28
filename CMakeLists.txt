@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(set_build_type_defines)
+include(options)
 
 project(
     corelib
@@ -32,19 +33,31 @@ set(CORELIB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 file(GLOB_RECURSE CORELIB_SOURCES "${CORELIB_SOURCE_DIR}/*.cpp")
 file(GLOB_RECURSE CORELIB_HEADERS "${CORELIB_INCLUDE_DIR}/*.hpp")
 
-add_library(${PROJECT_NAME} STATIC ${CORELIB_SOURCES} ${CORELIB_HEADERS})
+if(${CORELIB_BUILD_ONLY_SHARED_LIB})
+	add_library(${PROJECT_NAME} SHARED ${CORELIB_SOURCES} ${CORELIB_HEADERS})
+else()
+	add_library(${PROJECT_NAME} STATIC ${CORELIB_SOURCES} ${CORELIB_HEADERS})
+endif()
 target_include_directories(${PROJECT_NAME} PUBLIC ${CORELIB_INCLUDE_DIR})
 set_build_type_defines(${PROJECT_NAME})
 set_target_properties(${PROJECT_NAME} PROPERTIES
 	PREFIX ""
 )
 
-add_library(${PROJECT_NAME}_shared SHARED ${CORELIB_SOURCES} ${CORELIB_HEADERS})
-target_include_directories(${PROJECT_NAME}_shared PUBLIC ${CORELIB_INCLUDE_DIR})
-set_build_type_defines(${PROJECT_NAME}_shared)
-set_target_properties(${PROJECT_NAME}_shared PROPERTIES
-	OUTPUT_NAME ${PROJECT_NAME}
-	PREFIX ""
-)
+if(${CORELIB_BUILD_SHARED_LIB} AND NOT ${CORELIB_BUILD_ONLY_SHARED_LIB})
+	add_library(${PROJECT_NAME}_shared SHARED ${CORELIB_SOURCES} ${CORELIB_HEADERS})
+	target_include_directories(${PROJECT_NAME}_shared PUBLIC ${CORELIB_INCLUDE_DIR})
+	set_build_type_defines(${PROJECT_NAME}_shared)
+	set_target_properties(${PROJECT_NAME}_shared PROPERTIES
+		OUTPUT_NAME ${PROJECT_NAME}
+		PREFIX ""
+	)
+endif()
 
-add_subdirectory(examples)
+if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
+	set(CORELIB_BUILD_EXAMPLES ON)
+endif()
+
+if(${CORELIB_BUILD_EXAMPLES})
+	add_subdirectory(examples)
+endif()
