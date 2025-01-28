@@ -3,7 +3,7 @@
 void bar()
 {
     corelib::CallstackNode node;
-    corelib::print("bar called");
+    corelib::println("bar called");
 }
 
 void foo()

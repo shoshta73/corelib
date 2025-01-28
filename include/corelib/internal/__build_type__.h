@@ -1,16 +1,16 @@
 #ifndef __CORELIB_INTERNAL_BUILD_TYPE_H__
 #define __CORELIB_INTERNAL_BUILD_TYPE_H__ 1
 
-#if defined(DEBUG)
+#if defined(__DEBUG__)
 #define CORELIB_BUILD_TYPE "Debug"
 #define CORELIB_DEBUG 1
-#elif defined(RELEASE)
+#elif defined(__RELEASE__)
 #define CORELIB_BUILD_TYPE "Release"
 #define CORELIB_RELEASE 1
-#elif defined(REL_WITH_DEB_INFO)
+#elif defined(__REL_WITH_DEB_INFO__)
 #define CORELIB_BUILD_TYPE "RelWithDebInfo"
 #define CORELIB_REL_WITH_DEB_INFO 1
-#elif defined(MIN_SIZE_REL)
+#elif defined(__MIN_SIZE_REL__)
 #define CORELIB_BUILD_TYPE "MinSizeRel"
 #define CORELIB_MIN_SIZE_REL 1
 #else
@@ -37,20 +37,20 @@
 #define CORELIB_MIN_SIZE_REL 0
 #endif
 
-#ifndef DEBUG
-#define DEBUG 0
+#ifndef __DEBUG__
+#define __DEBUG__ 0
 #endif
 
-#ifndef RELEASE
-#define RELEASE 0
+#ifndef __RELEASE__
+#define __RELEASE__ 0
 #endif
 
-#ifndef REL_WITH_DEB_INFO
-#define REL_WITH_DEB_INFO 0
+#ifndef __REL_WITH_DEB_INFO__
+#define __REL_WITH_DEB_INFO__ 0
 #endif
 
-#ifndef MIN_SIZE_REL
-#define MIN_SIZE_REL 0
+#ifndef __MIN_SIZE_REL__
+#define __MIN_SIZE_REL__ 0
 #endif
 
 #endif // __CORELIB_INTERNAL_BUILD_TYPE_H__
