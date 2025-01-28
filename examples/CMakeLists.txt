@@ -6,9 +6,6 @@ endfunction()
 add_example(assert)
 set_build_type_defines(assert)
 
-add_example(log)
-set_build_type_defines(log)
-
 add_example(instrument)
 set_build_type_defines(instrument)
 

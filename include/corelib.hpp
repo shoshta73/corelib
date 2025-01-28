@@ -10,7 +10,7 @@
 #include <corelib/bind.hpp>
 
 #include <corelib/assert.hpp>
-#include <corelib/log.hpp>
+#include <corelib/print.hpp>
 
 #include <corelib/instrumentor.hpp>
 #include <corelib/callstack.hpp>

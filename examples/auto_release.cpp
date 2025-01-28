@@ -4,13 +4,13 @@
 
 int *create_int(int value)
 {
-  corelib::log::info("create_int: {}", value);
+  corelib::print("create_int: {}", value);
   return new int(value);
 }
 
 void destroy_int(int *ptr)
 {
-  corelib::log::info("destroy_int: {}", *ptr);
+  corelib::print("destroy_int: {}", *ptr);
   delete ptr;
 }
 
