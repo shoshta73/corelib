@@ -14,55 +14,55 @@
 
 namespace corelib {
 
-  struct ProfileResult
-  {
-    ::std::string name;
-    i64 start, end;
-    u32 thread_id;
-  };
-
-  struct InstrumentationSession
-  {
-    ::std::string name;
-  };
-
-  class Instrumentor
-  {
-  public:
-    Instrumentor();
-
-    void begin_session(const ::std::string &name, const ::std::string &filepath = "results.json");
-    void end_session();
-    void write_profile(const ProfileResult &result);
-
-    static Instrumentor &get()
+    struct ProfileResult
     {
-      static Instrumentor instance;
-      return instance;
-    }
+        ::std::string name;
+        i64 start, end;
+        u32 thread_id;
+    };
 
-  private:
-    void write_footer();
-    void write_header();
+    struct InstrumentationSession
+    {
+        ::std::string name;
+    };
 
-    InstrumentationSession *current_session_;
-    ::std::ofstream output_stream_;
-    int profile_count_;
-  };
+    class Instrumentor
+    {
+    public:
+        Instrumentor();
 
-  class InstrumentationTimer
-  {
-  public:
-    InstrumentationTimer(const char *name = ::std::source_location::current().function_name());
+        void begin_session(const ::std::string &name, const ::std::string &filepath = "results.json");
+        void end_session();
+        void write_profile(const ProfileResult &result);
 
-    ~InstrumentationTimer();
-    void stop();
+        static Instrumentor &get()
+        {
+            static Instrumentor instance;
+            return instance;
+        }
 
-  private:
-    const char *name_;
-    ::std::chrono::time_point<::std::chrono::high_resolution_clock> start_timepoint_;
-    bool stopped_;
-  };
+    private:
+        void write_footer();
+        void write_header();
+
+        InstrumentationSession *current_session_;
+        ::std::ofstream output_stream_;
+        int profile_count_;
+    };
+
+    class InstrumentationTimer
+    {
+    public:
+        InstrumentationTimer(const char *name = ::std::source_location::current().function_name());
+
+        ~InstrumentationTimer();
+        void stop();
+
+    private:
+        const char *name_;
+        ::std::chrono::time_point<::std::chrono::high_resolution_clock> start_timepoint_;
+        bool stopped_;
+    };
 
 } // namespace corelib
 

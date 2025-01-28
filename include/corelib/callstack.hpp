@@ -11,45 +11,45 @@
 
 namespace corelib {
 
-  struct CallstackEntry
-  {
-    ::std::source_location loc;
-    size caller_idx = -1;
-    size idx = 0;
-    u32 thread_id;
-  };
-
-  class Callstack
-  {
-  public:
-    Callstack(const ::std::string &filename = "callstack.csv");
-
-    ~Callstack();
-
-    static Callstack &get()
+    struct CallstackEntry
     {
-      static Callstack instance;
-      return instance;
-    }
+        ::std::source_location loc;
+        size caller_idx = -1;
+        size idx = 0;
+        u32 thread_id;
+    };
 
-    void push(CallstackEntry &node);
-    void pop(size idx);
+    class Callstack
+    {
+    public:
+        Callstack(const ::std::string &filename = "callstack.csv");
 
-  private:
-    ::std::vector<CallstackEntry> nodes_;
-    size last_;
-    ::std::string filename_;
-  };
+        ~Callstack();
 
-  class CallstackNode
-  {
-  public:
-    CallstackNode(::std::source_location loc = ::std::source_location::current());
-    ~CallstackNode();
+        static Callstack &get()
+        {
+            static Callstack instance;
+            return instance;
+        }
 
-  private:
-    CallstackEntry entry_;
-  };
+        void push(CallstackEntry &node);
+        void pop(size idx);
+
+    private:
+        ::std::vector<CallstackEntry> nodes_;
+        size last_;
+        ::std::string filename_;
+    };
+
+    class CallstackNode
+    {
+    public:
+        CallstackNode(::std::source_location loc = ::std::source_location::current());
+        ~CallstackNode();
+
+    private:
+        CallstackEntry entry_;
+    };
 
 } // namespace corelib
 

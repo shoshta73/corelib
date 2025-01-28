@@ -2,22 +2,22 @@
 
 void bar()
 {
-  corelib::CallstackNode node;
-  corelib::print("bar called");
+    corelib::CallstackNode node;
+    corelib::print("bar called");
 }
 
 void foo()
 {
-  corelib::CallstackNode node;
+    corelib::CallstackNode node;
 
-  for (int i = 0; i < 10; i++)
-  {
-    bar();
-  }
+    for (int i = 0; i < 10; i++)
+    {
+        bar();
+    }
 }
 
 int main(void)
 {
-  corelib::CallstackNode main_node;
-  foo();
+    corelib::CallstackNode main_node;
+    foo();
 }

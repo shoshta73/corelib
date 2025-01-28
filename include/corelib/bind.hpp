@@ -9,22 +9,22 @@
 
 namespace corelib {
 
-  template <typename T, typename... Args>
-  struct Bind
-  {
-    Bind(::std::function<T(Args...)> callback)
-        : callback_(::std::move(callback))
+    template <typename T, typename... Args>
+    struct Bind
     {
-    }
+        Bind(::std::function<T(Args...)> callback)
+            : callback_(::std::move(callback))
+        {
+        }
 
-    ::std::function<T(Args...)> operator()()
-    {
-      return callback_;
-    }
+        ::std::function<T(Args...)> operator()()
+        {
+            return callback_;
+        }
 
-  private:
-    ::std::function<T(Args...)> callback_;
-  };
+    private:
+        ::std::function<T(Args...)> callback_;
+    };
 
 } // namespace corelib
 
