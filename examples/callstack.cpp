@@ -1,12 +1,14 @@
 #include <corelib.hpp>
 
-void bar()
+void
+bar()
 {
     corelib::CallstackNode node;
     corelib::println("bar called");
 }
 
-void foo()
+void
+foo()
 {
     corelib::CallstackNode node;
 
@@ -16,7 +18,8 @@ void foo()
     }
 }
 
-int main(void)
+int
+main(void)
 {
     corelib::CallstackNode main_node;
     foo();

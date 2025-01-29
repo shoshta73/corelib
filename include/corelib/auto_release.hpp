@@ -32,7 +32,8 @@ namespace corelib {
             swap(other);
         }
 
-        AutoRelease &operator=(AutoRelease &&other)
+        AutoRelease &
+        operator=(AutoRelease &&other)
         {
             AutoRelease new_obj{::std::move(other)};
             swap(new_obj);
@@ -48,7 +49,8 @@ namespace corelib {
             }
         }
 
-        T get() const
+        T
+        get() const
         {
             return obj_;
         }
@@ -58,7 +60,8 @@ namespace corelib {
             return obj_;
         }
 
-        explicit operator bool() const
+        explicit
+        operator bool() const
         {
             return obj_ != Invalid;
         }
@@ -66,7 +69,8 @@ namespace corelib {
         bool operator==(const AutoRelease &) const = default;
         bool operator!=(const AutoRelease &) const = default;
 
-        void swap(AutoRelease &other)
+        void
+        swap(AutoRelease &other)
         {
             ::std::ranges::swap(obj_, other.obj_);
             ::std::ranges::swap(deleter_, other.deleter_);
@@ -80,7 +84,8 @@ namespace corelib {
 } // namespace corelib
 
 template <class T, T Invalid>
-void swap(::corelib::AutoRelease<T, Invalid> &ar1, ::corelib::AutoRelease<T, Invalid> &ar2)
+void
+swap(::corelib::AutoRelease<T, Invalid> &ar1, ::corelib::AutoRelease<T, Invalid> &ar2)
 {
     ar1.swap(ar2);
 }

@@ -1,6 +1,7 @@
 #include <corelib.hpp>
 
-int main(void)
+int
+main(void)
 {
     corelib::assert();
     corelib::assert(true);

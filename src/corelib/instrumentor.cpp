@@ -11,14 +11,16 @@ namespace corelib {
     {
     }
 
-    void Instrumentor::begin_session(const ::std::string &name, const ::std::string &filepath)
+    void
+    Instrumentor::begin_session(const ::std::string &name, const ::std::string &filepath)
     {
         output_stream_.open(filepath);
         write_header();
         current_session_ = new InstrumentationSession{name};
     }
 
-    void Instrumentor::end_session()
+    void
+    Instrumentor::end_session()
     {
         write_footer();
         output_stream_.close();
@@ -27,7 +29,8 @@ namespace corelib {
         profile_count_ = 0;
     }
 
-    void Instrumentor::write_profile(const ProfileResult &result)
+    void
+    Instrumentor::write_profile(const ProfileResult &result)
     {
         if (profile_count_++ > 0)
             output_stream_ << ",";
@@ -48,13 +51,15 @@ namespace corelib {
         output_stream_.flush();
     }
 
-    void Instrumentor::write_header()
+    void
+    Instrumentor::write_header()
     {
         output_stream_ << "{\"otherData\": {},\"traceEvents\":[";
         output_stream_.flush();
     }
 
-    void Instrumentor::write_footer()
+    void
+    Instrumentor::write_footer()
     {
         output_stream_ << "]}";
         output_stream_.flush();
@@ -73,7 +78,8 @@ namespace corelib {
             stop();
     }
 
-    void InstrumentationTimer::stop()
+    void
+    InstrumentationTimer::stop()
     {
         auto endTimepoint = ::std::chrono::high_resolution_clock::now();
 

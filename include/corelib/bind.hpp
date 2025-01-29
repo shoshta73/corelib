@@ -17,7 +17,8 @@ namespace corelib {
         {
         }
 
-        ::std::function<T(Args...)> operator()()
+        ::std::function<T(Args...)>
+        operator()()
         {
             return callback_;
         }

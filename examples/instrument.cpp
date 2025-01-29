@@ -1,11 +1,13 @@
 #include <corelib.hpp>
 
-void foo()
+void
+foo()
 {
     corelib::InstrumentationTimer timer;
 }
 
-void bar(int counter)
+void
+bar(int counter)
 {
     corelib::InstrumentationTimer timer;
     for (int i = 0; i < counter; i++)
@@ -17,7 +19,8 @@ void bar(int counter)
     }
 }
 
-int main(void)
+int
+main(void)
 {
     corelib::Instrumentor::get().begin_session("test", "results.json");
     {

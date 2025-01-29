@@ -26,7 +26,8 @@ namespace corelib {
 
         ~Callstack();
 
-        static Callstack &get()
+        static Callstack &
+        get()
         {
             static Callstack instance;
             return instance;

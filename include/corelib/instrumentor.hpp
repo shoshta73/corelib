@@ -35,7 +35,8 @@ namespace corelib {
         void end_session();
         void write_profile(const ProfileResult &result);
 
-        static Instrumentor &get()
+        static Instrumentor &
+        get()
         {
             static Instrumentor instance;
             return instance;

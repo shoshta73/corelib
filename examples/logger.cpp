@@ -1,6 +1,7 @@
 #include <corelib.hpp>
 
-int main()
+int
+main()
 {
     corelib::log::print("This is a message");
     corelib::log::trace("This is a message");

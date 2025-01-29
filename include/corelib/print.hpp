@@ -9,13 +9,15 @@
 namespace corelib {
 
     template <typename... Args>
-    constexpr void println(std::format_string<Args...> msg, Args &&...args)
+    constexpr void
+    println(std::format_string<Args...> msg, Args &&...args)
     {
         std::println("{}", std::format(msg, std::forward<Args>(args)...));
     }
 
     template <typename... Args>
-    constexpr void print(std::format_string<Args...> msg, Args &&...args)
+    constexpr void
+    print(std::format_string<Args...> msg, Args &&...args)
     {
         std::print("{}", std::format(msg, std::forward<Args>(args)...));
     }

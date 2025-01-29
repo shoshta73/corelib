@@ -37,7 +37,8 @@ namespace corelib {
         file.close();
     }
 
-    void Callstack::push(CallstackEntry &node)
+    void
+    Callstack::push(CallstackEntry &node)
     {
         node.idx = nodes_.size();
         if (nodes_.size() >= 1)
@@ -48,7 +49,8 @@ namespace corelib {
         nodes_.push_back(node);
     }
 
-    void Callstack::pop(size idx)
+    void
+    Callstack::pop(size idx)
     {
         last_ = nodes_[idx].caller_idx;
     }
