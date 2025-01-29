@@ -5,14 +5,14 @@
 int *
 create_int(int value)
 {
-    corelib::println("create_int: {}", value);
+    ::std::println("create_int: {}", value);
     return new int(value);
 }
 
 void
 destroy_int(int *ptr)
 {
-    corelib::println("destroy_int: {}", *ptr);
+    ::std::println("destroy_int: {}", *ptr);
     delete ptr;
 }
 

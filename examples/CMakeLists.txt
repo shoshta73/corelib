@@ -17,6 +17,3 @@ set_build_type_defines(auto_release)
 
 add_example(binder)
 set_build_type_defines(binder)
-
-add_example(logger)
-set_build_type_defines(logger)

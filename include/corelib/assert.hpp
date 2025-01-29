@@ -6,8 +6,7 @@
 #include <cstdlib>
 #include <format>
 #include <source_location>
-
-#include <corelib/print.hpp>
+#include <print>
 
 namespace corelib {
 
@@ -25,7 +24,7 @@ namespace corelib {
             {
                 if (!cond)
                 {
-                    println("Assertion failed: {}:{} in {}", loc.file_name(), loc.line(), loc.function_name());
+                    ::std::println("Assertion failed: {}:{} in {}", loc.file_name(), loc.line(), loc.function_name());
                     ::std::abort();
                 }
             }
@@ -40,7 +39,7 @@ namespace corelib {
                 if (!cond)
                 {
                     auto location = ::std::format("{}:{} in {}", loc.file_name(), loc.line(), loc.function_name());
-                    ::corelib::println("Assertion failed: {}: {}", location, ::std::format(msg, ::std::forward<Args>(args)...));
+                    ::std::println("Assertion failed: {}: {}", location, ::std::format(msg, ::std::forward<Args>(args)...));
 
                     ::std::abort();
                 }
