@@ -7,7 +7,7 @@ include(options)
 project(
     corelib
     DESCRIPTION "My collection of stuff that i commonly use."
-    VERSION 0.2.0.2
+    VERSION 0.2.1.0
     LANGUAGES CXX
 )
 

@@ -35,6 +35,7 @@
 #else
 
 #define CORELIB_HAS_CXX20 0
+
 #endif
 
 #if __cplusplus >= 201703L
