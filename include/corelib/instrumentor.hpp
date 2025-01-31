@@ -1,7 +1,7 @@
 #ifndef CORELIB_INSTRUMENTOR_HPP
 #define CORELIB_INSTRUMENTOR_HPP
 
-#include <corelib/internal/internal.h>
+#include <corelib/internal/internal.hpp>
 
 #include <string>
 #include <chrono>

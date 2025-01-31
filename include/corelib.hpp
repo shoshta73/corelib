@@ -1,7 +1,7 @@
 #ifndef __CORELIB_HPP__
 #define __CORELIB_HPP__
 
-#include <corelib/internal/internal.h>
+#include <corelib/internal/internal.hpp>
 #include <corelib_config.h>
 
 #include <corelib/memory.hpp>

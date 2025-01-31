@@ -1,7 +1,7 @@
 #ifndef __CORELIB_BINDER_HPP__
 #define __CORELIB_BINDER_HPP__ 1
 
-#include <corelib/internal/internal.h>
+#include <corelib/internal/internal.hpp>
 
 #include <functional>
 #include <utility>

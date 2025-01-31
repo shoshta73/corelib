@@ -1,7 +1,7 @@
 #ifndef __CORELIB_PRINT_HPP__
 #define __CORELIB_PRINT_HPP__ 1
 
-#include <corelib/internal/internal.h>
+#include <corelib/internal/internal.hpp>
 
 #include <format>
 #include <print>
