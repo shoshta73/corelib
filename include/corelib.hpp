@@ -4,6 +4,7 @@
 #include <corelib/internal/internal.h>
 #include <corelib_config.h>
 
+#include <corelib/memory.hpp>
 #include <corelib/typedef.hpp>
 #include <corelib/def.hpp>
 #include <corelib/auto_release.hpp>
