@@ -50,5 +50,10 @@ int main()
     error("Hello, {}!", "world");
     fatal("Hello, {}!", "world");
 
+    print("Hello, world!");
+    println("Hello, world!");
+    print("Hello, {}!", "world");
+    println("Hello, {}!", "world");
+
     return 0;
 }

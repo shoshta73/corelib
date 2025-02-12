@@ -8,6 +8,7 @@
 #include <utility>
 
 #include "templates.hpp"
+#include "print.hpp"
 
 namespace corelib { namespace log {
 
@@ -76,7 +77,7 @@ namespace corelib { namespace log {
                     level = "FATAL";
                 }
 
-                ::std::println("{}{}:{} {} ( {}:{} in {} )", color, level, reset, ::std::format(fmt, ::std::forward<Args>(args)...), loc.file_name(), loc.line(), loc.function_name());
+                corelib::println("{}{}:{} {} ( {}:{} in {} )", color, level, reset, ::std::format(fmt, ::std::forward<Args>(args)...), loc.file_name(), loc.line(), loc.function_name());
             }
         };
 
@@ -127,7 +128,7 @@ namespace corelib { namespace log {
                     level = "FATAL";
                 }
 
-                ::std::println("{}{} [{}]:{} {} ( {}:{} in {} )", color, Name.value, level, reset, ::std::format(fmt, ::std::forward<Args>(args)...), loc.file_name(), loc.line(), loc.function_name());
+                corelib::println("{}{} [{}]:{} {} ( {}:{} in {} )", color, Name.value, level, reset, ::std::format(fmt, ::std::forward<Args>(args)...), loc.file_name(), loc.line(), loc.function_name());
             }
         };
 

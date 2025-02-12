@@ -8,13 +8,13 @@
 namespace corelib {
 
     template <typename... Args>
-    void print(::std::format_string<Args..> fmt, Args&&...args)
+    void print(::std::format_string<Args...> fmt, Args&&...args)
     {
         ::std::print(fmt, std::forward<Args>(args)...);
     }
 
     template <typename... Args>
-    void println(::std::format_string<Args..> fmt, Args&&...args)
+    void println(::std::format_string<Args...> fmt, Args&&...args)
     {
         ::std::println(fmt, std::forward<Args>(args)...);
     }

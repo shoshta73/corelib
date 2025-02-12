@@ -3,6 +3,7 @@
 
 #include "corelib/templates.hpp"
 
+#include "corelib/print.hpp"
 #include "corelib/log.hpp"
 
 #endif /* CORELIB_HPP */
