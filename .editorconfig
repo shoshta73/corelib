@@ -21,3 +21,7 @@ tab_width = 8
 [*.cmake]
 indent_size = 8
 tab_width = 8
+
+[*.{c,h,cpp,hpp}]
+indent_size = 4
+tab_width = 4
