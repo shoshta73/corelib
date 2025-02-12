@@ -1,0 +1,78 @@
+# Genral options
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+ColumnLimit: 0
+AccessModifierOffset: -4
+AlignArrayOfStructures: Right
+SortIncludes: false
+BreakAfterReturnType: None
+IndentExternBlock: NoIndent
+
+# indentation
+IndentCaseBlocks: false
+IndentCaseLabels: true
+
+# Qualifiers
+# QualifierOrder: [constexpr, inline, static, type, const, volatile]
+
+# Pointer alignment and references
+DerivePointerAlignment: false
+PointerAlignment: Right
+ReferenceAlignment: Left
+
+# Braces
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: true
+  AfterClass: false
+  AfterControlStatement: Always
+  AfterEnum: false
+  AfterFunction: true
+  AfterNamespace: false
+  AfterStruct: false
+  AfterUnion: false
+  AfterExternBlock: true
+  BeforeCatch: true
+  BeforeElse: true
+  BeforeLambdaBody: true
+  BeforeWhile: true
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: false
+
+# Parens
+SpaceBeforeParens: Custom
+SpaceBeforeParensOptions:
+  AfterControlStatements: true
+  AfterForeachMacros: false
+  AfterFunctionDeclarationName: false
+  AfterFunctionDefinitionName: false
+  AfterIfMacros: false
+  AfterOverloadedOperator: true
+  AfterRequiresInClause: true
+  AfterRequiresInExpression: true
+  BeforeNonEmptyParentheses: false
+
+# Breaks
+BreakAdjacentStringLiterals: true
+BreakAfterAttributes: Always
+BreakBeforeConceptDeclarations: true
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeComma
+BreakInheritanceList: AfterColon
+BreakTemplateDeclarations: Yes
+
+# Namespaces
+CompactNamespaces: true
+FixNamespaceComments: true
+NamespaceIndentation: All
+ShortNamespaceLines: 0
+# WrapNamespaceBodyWithEmptyLines: Always
+
+# Empty lines
+MaxEmptyLinesToKeep: 1
+EmptyLineAfterAccessModifier: Never
+EmptyLineBeforeAccessModifier: Always
